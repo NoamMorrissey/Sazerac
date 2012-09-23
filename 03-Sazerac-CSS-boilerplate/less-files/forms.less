@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Froms
+ */
+
+/* #Froms
+================================================== */
+
+    form,
+    fieldset {
+        margin: 0 0 @textLineHeight;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"], 
+    textarea,
+    select {
+        
+        outline: none;
+        margin: 0;
+        margin-bottom:          @textLineHeight !important;
+        font-family:            @formTextFontFamily;
+        font-size:              @formTextFontSize;
+        color:                  @formTextColor;
+        border:                 @formBorderWidth @formBorderStyle @formBorderColor;
+        background:             @formBackgroundColor;
+        padding:                @formPaddingHorizontal @formPaddingVertical;
+
+        .border-radius(@formBorderRadius);
+        .box-shadow(inset 0px 2px 5px 0px rgba(0, 0, 0, 0.2));
+    }
+    .form {
+        fieldset {
+            margin: 0 0 @textLineHeight 0;
+            padding: 0;
+            border: 0;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="color"], 
+        textarea,
+        select {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="color"]:focus, 
+    textarea:focus,
+    select:focus {
+
+        outline: none !important;
+
+        border:                 @formBorderWidth @formBorderStyle darken(@formBorderColor, 20%);
+        background:             darken(@formBackgroundColor, 7%);
+        color:                  @formTextColor;
+
+        .box-shadow(0 0 3px rgba(0,0,0,.5));
+    }
+
+    input[type="text"][disabled],
+    input[type="password"][disabled],
+    input[type="datetime"][disabled],
+    input[type="datetime-local"][disabled],
+    input[type="date"][disabled],
+    input[type="month"][disabled],
+    input[type="time"][disabled],
+    input[type="week"][disabled],
+    input[type="number"][disabled],
+    input[type="email"][disabled],
+    input[type="url"][disabled],
+    input[type="search"][disabled],
+    input[type="tel"][disabled],
+    input[type="color"][disabled], 
+    textarea[disabled],
+    select[disabled] {
+        cursor: not-allowed;
+        background-color:       @grayLighter;
+        border-color:           lighten(@formBorderColor, 20%);
+        .box-shadow(0 0 3px rgba(0,0,0,.1));
+    }
+    select[Editar],
+    select[size] {
+      height: auto;
+    }
+    input,
+    textarea,
+    select {
+        /* override margin-left from core grid system */
+        margin-left: 0 !important;
+    }
+
+    select {
+        padding: 5px;
+    }
+
+    label,
+    legend {
+        display: block;
+        font-weight: bold;
+        font-size:              @formTextFontSize;
+    }
+    label {
+        color:                  @grayLight;
+    }
+    
+    input[type="checkbox"] {
+        display: inline;
+    }
+    
+    label span,
+    legend span {
+        font-weight: normal;
+        font-size:              @formTextFontSize;
+        color:                  @formTextColor;
+    }

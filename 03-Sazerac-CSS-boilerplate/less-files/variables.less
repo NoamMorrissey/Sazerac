@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Variables for customization
+   ========================================================================== */
+   
+/**
+ * Table of contents in this document
+ *
+ *	#Colors
+ *  #Typography
+ *  #Links
+ *  #Scaffolding
+ *  #Tables
+ *  #Buttons
+ *  #Forms
+ *  #Others
+ */
+ 
+ /* #Colors
+   ========================================================================== */
+ 
+    /* Grays */
+    @black:                         #000;
+    @grayDarker:                    #222;
+    @grayDark:                      #313131;
+    @gray:                          #545454;
+    @grayLight:                     #a6a6a6;
+    @grayLighter:                   #e9e9e9;
+    @white:                         #fff;
+    
+    /* Accent colors */
+    @blue:                          #71a5ec;
+    @blueDark:                      #4761e2;
+    @green:                         #4ec64b;
+    @red:                           #de4646;
+    
+    /* Body color */
+    @bodyBackground:                @white;
+    
+    /* Link colors*/
+    @linkColor:                     @blue;
+    @linkColorHover:                darken(@linkColor, 15%);
+
+
+/* #Typography
+   ========================================================================== */
+
+   /* Headers */
+   @headingsFontFamily:             "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
+   @headingsFontWeight:             normal;
+   @headingsColor:                  @gray;
+
+   @smallHeadingsFontSize:          18px;
+   @smallHeadingsFontWeight:        normal;
+   @smallHeadingsColor:             @grayLight;
+   
+   @headingOneFontSize:             52px;
+   @headingOneLineHeight:           61px;
+
+   @headingTwoFontSize:             35px;
+   @headingTwoLineHeight:           40px;
+
+   @headingTreeFontSize:            28px;
+   @headingTreeLineHeight:          34px;
+
+   @headingFourFontSize:            21px;
+   @headingFourLineHeight:          30px;
+
+   @headingFiveFontSize:            17px;
+   @headingFiveLineHeight:          24px;
+
+   @headingSixFontSize:             14px;
+   @headingSixLineHeight:           21px;
+
+   /* Text */
+   @textFontFamily:                 "Helvetica Neue", Helvetica, Arial, sans-serif;
+   @textFontSize:                   14px;
+   @textLineHeight:                 23px;
+   @textColor:                      @grayDarker;
+
+   @smallTextFontSize:              11px;
+   @smallTextFontWeight:            normal;
+   @smallTextColor:                 @grayLight;
+
+   @codeFontFamily:                 Menlo, Monaco, Consolas, "Courier New", monospace;
+
+/* #Links
+   ========================================================================== */
+   
+   @linkDecoration:                 none;
+   @linkDecorationHover:            decoration;
+
+
+/* #Scaffolding
+   ========================================================================== */
+   @columnNumber:                   16;
+   @mobileColumnNumber:             4;
+
+   /* Note: variables for #Large size (1200 and up) */
+   @columnWidthLarge:               55px;
+   @gutterWidthLarge:               20px;
+
+   /* Note: variables for #Default size (960 and up) */
+   @columnWidthRegular:             40px;
+   @gutterWidthRegular:             20px;
+
+   /* Note: variables for #Portrait size (768 and above) */
+   @columnWidthPortrait:            28px;
+   @gutterWidthPortrait:            20px;
+   
+   /* Note: variables for #Tablet size (480 and up & 767 and bellow) */
+   @minWidthTablet:                 480px;
+   @maxWidthTablet:                 767px;
+   
+   /* Note: variables for #Mobile size (479 and bellow) */
+   @minWidthSmartphone:             300px;
+   @maxWidthSmartphone:             479px;
+
+/* #Tables
+   ========================================================================== */
+   /* overall background-color */
+   @tableBackground:                transparent;
+
+   /* for striping */
+   @tableBackgroundZebra:           lighten(@grayLighter, 5%);
+
+   /* For hover */
+   @tableBackgroundHover:           #FFF6E1;
+
+   /* Gradient th */
+   @tableGradientColor1:            @gray;
+   @tableGradientColor2:            @grayDarker;
+   @tableGradientColorText:         @white;
+
+   /* For cell & border */
+   @tableBorderColor:               @grayLight;
+
+   @tableBorderWidth:               1px;
+   @tableBorderStyle:               dotted;
+
+/* #Buttons
+   ========================================================================== */
+   @buttonTextFontFamily:           @textFontFamily;
+   @buttonTextFontSize:             @textFontSize;
+   @buttonBorderWidth:              1px;
+   @buttonBorderRadius:             3px;
+   @buttonColor:                    @blue;
+   @buttonTextColor:                @white;
+   @buttonTextShadow:               @buttonColor;
+
+   @buttonSecondaryColor:           #eee;
+   @buttonSecondaryTextColor:       #848484;
+   @buttonSecondaryTextShadow:      @white;
+
+   @buttonSuccessColor:             @green;
+   @buttonSuccessTextColor:         @white;
+   @buttonSuccessTextShadow:        darken(@green, 10%);
+
+   @buttonAlertColor:               @red;
+   @buttonAlertTextColor:           @white;
+   @buttonAlertTextShadow:          @buttonAlertColor;
+
+/* #Forms
+   ========================================================================== */
+   @formTextFontFamily:             @textFontFamily;
+   @formTextFontSize:               13px;
+   @formTextColor:                  @gray;
+   @formBackgroundColor:            @white;
+   @formPaddingHorizontal:          6px;
+   @formPaddingVertical:            4px;
+   @formBorderWidth:                1px;
+   @formBorderStyle:                solid;
+   @formBorderColor:                @grayLight;
+   @formBorderRadius:               3px;
+
+/* #Others
+   ========================================================================== */
+   @border:                         0px;

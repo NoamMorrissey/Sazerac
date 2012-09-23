@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Variables
+ *  #Buttons
+ */
+ 
+/* #Variables
+   ================================================== */
+
+   @lineHeight:                 @buttonTextFontSize * 1.28;
+   @paddingVertical:            @buttonTextFontSize * 0.64;
+   @paddingHorizontal:          @buttonTextFontSize + 6;
+   @buttonLarge:                @buttonTextFontSize * 1/3.5;
+   @buttonSmall:                @buttonTextFontSize * 1/6;
+   @buttonTiny:                 @buttonTextFontSize * 1/3.5;
+   
+/* #Buttons
+   ================================================== */
+   .button {
+        width: auto;
+        cursor: pointer;
+        display: inline-block;
+        line-height:            @lineHeight;
+        *line-height:           @lineHeight;
+        padding:                @paddingVertical @paddingHorizontal !important;
+        font-weight: bold;
+        margin: 0; 
+        outline: none;
+        position: relative; 
+        text-align: center; 
+        text-decoration: none;
+
+        font-family:            @buttonTextFontFamily;
+        font-size:              @buttonTextFontSize;
+        background:             @buttonColor;
+        text-shadow:            1px 1px 0 darken(@buttonTextShadow, 20%);
+        color:                  @buttonTextColor;
+        border:                 @buttonBorderWidth solid darken(@buttonColor, 20%);
+
+        .border-radius(@buttonBorderRadius);
+        .transition(background-color 0.15s ease-in-out);
+        .box-shadow(~"inset 1px 1px 1px rgba(255,255,255,.5), 0 0 3px rgba(0,0,0,.5)");
+
+        /* Button states */
+        &:hover {
+            background-color:   darken(@buttonColor, 10%);
+            color:              @buttonTextColor;
+            text-shadow:        1px 1px 0 darken(@buttonColor, 40%);
+            border:             @buttonBorderWidth solid darken(@buttonColor, 20%);
+
+            .box-shadow(~"inset 1px 1px 1px rgba(255,255,255,.9), 1px 1px 3px rgba(0,0,0,.5)");
+        }
+
+        &.active,
+        &:active {
+            .box-shadow(inset 0 1px 1px rgba(0,0,0,.2));
+            top:1px;
+            left:1px;
+            position:relative;
+        }
+
+        &:focus {
+            color:              @buttonTextColor;
+            .box-shadow(~"inset 1px 1px 1px rgba(255,255,255,1), 1px 1px 3px rgba(0,0,0,.5)");
+        }
+
+        /* Disable state */
+        &.disabled,
+        &[disabled] {
+            cursor: default;
+            background-color: darken(@buttonColor, 10%);
+            text-shadow: none;
+            .opacity(50);
+            .box-shadow(none);
+        }
+
+        /* Size options */
+
+        &.button-large { 
+            font-size:          @buttonTextFontSize + @buttonLarge;
+            line-height:        @lineHeight + @buttonLarge;
+            *line-height:       @lineHeight + @buttonLarge;
+            padding:            @paddingVertical + @buttonLarge @paddingHorizontal + @buttonLarge !important;
+            .border-radius(@buttonLarge);
+        }
+
+        &.button-small {
+            font-size:          @buttonTextFontSize - @buttonSmall;
+            line-height:        @lineHeight - @buttonSmall;
+            *line-height:       @lineHeight - @buttonSmall;
+            padding:            @paddingVertical - @buttonSmall @paddingHorizontal - @buttonSmall !important;
+            .border-radius(@buttonBorderRadius - @buttonSmall);
+        }
+
+        &.button-tiny {
+            font-size:          @buttonTextFontSize - @buttonTiny;
+            line-height:        @lineHeight - @buttonTiny;
+            *line-height:       @lineHeight - @buttonTiny;
+            padding:            @paddingVertical - @buttonTiny @paddingHorizontal - @buttonTiny !important;
+            .border-radius(@buttonBorderRadius - @buttonTiny);
+            font-weight:normal;
+        }
+    }
+
+    /* Buttons type */
+    .button-secondary {
+        background:             @buttonSecondaryColor;
+        text-shadow:            1px 1px 0 darken(@buttonSecondaryTextShadow, 20%);
+        color:                  @buttonSecondaryTextColor;
+        border:                 @buttonBorderWidth solid darken(@buttonSecondaryColor, 10%);
+
+        &:hover {
+            background-color:   darken(@buttonSecondaryColor, 10%);
+            color:              @buttonSecondaryTextColor;
+            text-shadow:        1px 1px 0 lighten(@buttonSecondaryColor, 40%);
+            border:             @buttonBorderWidth solid darken(@buttonSecondaryColor, 20%);
+        }
+
+        &.disabled,
+        &[disabled] {
+            background-color: darken(@buttonSecondaryColor, 10%);
+            text-shadow: none;
+        }
+    }
+
+    .button-success {
+        background:             @buttonSuccessColor;
+        text-shadow:            1px 1px 0 darken(@buttonSuccessTextShadow, 20%);
+        color:                  @buttonSuccessTextColor;
+        border:                 @buttonBorderWidth solid darken(@buttonSuccessColor, 10%);
+
+        &:hover {
+            background-color:   darken(@buttonSuccessColor, 10%);
+            color:              @buttonSuccessTextColor;
+            text-shadow:        1px 1px 0 darken(@buttonSuccessColor, 40%);
+            border:             @buttonBorderWidth solid darken(@buttonSuccessColor, 20%);
+        }
+
+        &.disabled,
+        &[disabled] {
+            background-color: darken(@buttonSuccessColor, 10%);
+            text-shadow: none;
+        }
+    }
+
+    .button-alert {
+        background:             @buttonAlertColor;
+        text-shadow:            1px 1px 0 darken(@buttonAlertTextShadow, 20%);
+        color:                  @buttonAlertTextColor;
+        border:                 @buttonBorderWidth solid darken(@buttonAlertColor, 10%);
+        
+        &:hover {
+            background-color:   darken(@buttonAlertColor, 10%);
+            color:              @buttonAlertTextColor;
+            text-shadow:        1px 1px 0 darken(@buttonAlertColor, 40%);
+            border:             @buttonBorderWidth solid darken(@buttonAlertColor, 20%);
+        }
+
+        &.disabled,
+        &[disabled] {
+            background-color: darken(@buttonAlertColor, 10%);
+            text-shadow: none;
+        }
+    }
+
+    /* Block button */
+    .button-block {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        .box-sizing(border-box);
+    }
+    .button-block + .button-block {
+         margin-top: 10px;
+    }

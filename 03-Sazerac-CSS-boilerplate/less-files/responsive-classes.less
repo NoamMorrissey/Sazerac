@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Responsive Classes - CREDIT: Twitter Bootstrap
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Hiden class
+ *  #For desktops
+ *  #Phones only
+ *  #Tablets & small desktops only
+ */
+ 
+/* #Hiden class
+   ================================================== */
+   
+   /* 
+    * Hide from screenreaders and browsers
+    * Credit: HTML5 Boilerplate
+    */
+
+    .hidden {
+        display: none;
+        visibility: hidden;
+    }
+
+/* #For desktops
+   ================================================== */
+
+   .visible-phone     { display: none !important; }
+   .visible-tablet    { display: none !important; }
+   .visible-desktop   { } /* Don't set initially */
+   .hidden-phone      { }
+   .hidden-tablet     { }
+   .hidden-desktop    { display: none !important; }
+
+/* #Phones only
+   ================================================== */
+
+   @media only screen and (max-width: @maxWidthTablet) {
+
+       /* Show */
+       .visible-phone   { display: inherit !important; } /* Use inherit to restore previous behavior */
+       
+       /* Hide */
+       .hidden-phone    { display: none !important; }
+       .hidden-desktop  { display: inherit !important; }
+       .visible-desktop { display: none !important; }
+
+   }
+
+/* #Tablets & small desktops only
+   ================================================== */
+
+   @media only screen and (min-width: @totalWidthPortrait) and (max-width: @maxWidthPortrait) {
+
+       /* Show */
+       .visible-tablet  { display: inherit !important; }
+
+       /* Hide */
+       .hidden-tablet    { display: none !important; }
+       .hidden-desktop   { display: inherit !important; }
+       .visible-desktop  { display: none !important ; }
+
+   }

@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Variables              - Less variables to create Grids
+ *  #Grid                   - (960 grid)
+ *  #Clearing
+ */
+ 
+ 
+/* #Variables
+   ========================================================================== */
+
+   @totalWidthRegular:  (@columnWidthRegular + @gutterWidthRegular) * @columnNumber;
+   @bottomLimitRegular: @totalWidthRegular - 1;
+
+/* #Grid
+   ========================================================================== */
+
+   /* Note: Design #Base Websites */
+   .container {
+       position: relative; 
+       width: @totalWidthRegular; 
+       margin: 0 auto; 
+       padding: 0;
+   }
+
+    /* Grid: Global */
+    .grid-1,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5,
+    .grid-6,
+    .grid-7,
+    .grid-8,
+    .grid-9,
+    .grid-10,
+    .grid-11,
+    .grid-12,
+    .grid-13,
+    .grid-14,
+    .grid-15,
+    .grid-16 {
+        display: inline;
+        float: left;
+        position: relative;
+        margin-left:    @gutterWidthRegular / 2;
+        margin-right:   @gutterWidthRegular / 2;
+    }
+
+    .push_1, .pull_1,
+    .push_2, .pull_2,
+    .push_3, .pull_3,
+    .push_4, .pull_4,
+    .push_5, .pull_5,
+    .push_6, .pull_6,
+    .push_7, .pull_7,
+    .push_8, .pull_8,
+    .push_9, .pull_9,
+    .push_10, .pull_10,
+    .push_11, .pull_11,
+    .push_12, .pull_12,
+    .push_13, .pull_13,
+    .push_14, .pull_14,
+    .push_15, .pull_15,
+    .push_16, .pull_16 {
+    	position:relative;
+    }
+
+    /* Grid: Alpha ~ First, Omega ~ Last */
+    .alpha { margin-left: 0; }
+    .omega { margin-right: 0; }
+
+    .container {
+        /* Note: This loop creates the Grid values */
+        .loopingGrid (@index) when (@index > 0) {
+            (~".grid-@{index}") {
+                width: ( @columnWidthRegular * @index ) + ( @gutterWidthRegular * ( @index - 1 ) );
+            }
+            .loopingGrid(@index - 1);
+        }
+        .loopingGrid (0) {}
+
+        .loopingGrid (@columnNumber);
+
+        /* Note: This loop creates the Prefix values */
+        .loopingPrefix (@index) when (@index > 0) {
+            (~".prefix-@{index}") {
+                padding-left: ( @columnWidthRegular * @index ) + ( @gutterWidthRegular * @index );
+            }
+            .loopingPrefix(@index - 1);
+        }
+        .loopingPrefix (0) {}
+
+        .loopingPrefix (@columnNumber);
+
+        /* Note: This loop creates the Suffix values */
+        .loopingSuffix (@index) when (@index > 0) {
+            (~".suffix-@{index}") {
+                padding-right: ( @columnWidthRegular * @index ) + ( @gutterWidthRegular * @index );
+            }
+            .loopingSuffix(@index - 1);
+        }
+        .loopingSuffix (0) {}
+
+        .loopingSuffix (@columnNumber);
+        
+        /* Note: This loop creates the Push values */
+        .loopingPush (@index) when (@index > 0) {
+            (~".push-@{index}") {
+                left: ( @columnWidthRegular * @index ) + ( @gutterWidthRegular * @index );
+            }
+            .loopingPush(@index - 1);
+        }
+        .loopingPush (0) {}
+
+        .loopingPush (@columnNumber);
+
+        /* Note: This loop creates the Push values */
+        .loopingPull (@index) when (@index > 0) {
+            (~".pull-@{index}") {
+                left: -( ( @columnWidthRegular * @index ) + ( @gutterWidthRegular * @index ) );
+            }
+            .loopingPull(@index - 1);
+        }
+        .loopingPull (0) {}
+
+        .loopingPull (@columnNumber);
+    }
+
+
+/* #Clearing
+   ========================================================================== */
+
+   /* http://sonspring.com/journal/clearing-floats */
+   .clear {
+       clear: both;
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
+        width: 0;
+        height: 0;
+   }
+   /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+   .row:before,
+   .row:after,
+   .clearfix:before,
+   .clearfix:after {
+       content: '\0020';
+       .clear;
+   }
+   .row:after,
+   .clearfix:after {
+       clear: both;
+   }
+   /*
+     The following zoom:1 rule is specifically for IE6 + IE7.
+     Move to separate stylesheet if invalid CSS is a problem.
+   */
+   .row,
+   .clearfix {
+       zoom: 1;
+   }

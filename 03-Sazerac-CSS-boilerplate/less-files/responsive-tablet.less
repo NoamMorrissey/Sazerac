@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Responsive Tablet
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Variables
+ *  #Responsive Tablet Styles - (480 and up & 767px and bellow)
+ */
+ 
+/* #Variables
+   ================================================== */
+   @widthTablet: @minWidthTablet - 60;
+
+/* #Responsive Tablet Styles
+   ========================================================================== */
+    @media only screen and (max-width: @maxWidthTablet) {
+       
+       /* Note: Design #Base Websites and up */
+       .container {
+           width: @widthTablet;
+           
+           /* Grid: Global */
+           .grid-1,
+           .grid-2,
+           .grid-3,
+           .grid-4,
+           .grid-5,
+           .grid-6,
+           .grid-7,
+           .grid-8,
+           .grid-9,
+           .grid-10,
+           .grid-11,
+           .grid-12,
+           .grid-13,
+           .grid-14,
+           .grid-15,
+           .grid-16 { 
+               width: @widthTablet;
+               margin: 0; 
+           }
+           
+           /* Prefix & Suffix */
+           .prefix-1,
+           .prefix-2,
+           .prefix-3,
+           .prefix-4,
+           .prefix-5,
+           .prefix-6,
+           .prefix-7,
+           .prefix-8,
+           .prefix-9,
+           .prefix-10,
+           .prefix-11,
+           .prefix-12,
+           .prefix-13,
+           .prefix-14,
+           .prefix-15,
+           .prefix-16,
+           .prefix-1,
+           .suffix-2,
+           .suffix-3,
+           .suffix-4,
+           .suffix-5,
+           .suffix-6,
+           .suffix-7,
+           .suffix-8,
+           .suffix-9,
+           .suffix-10,
+           .suffix-11,
+           .suffix-12,
+           .suffix-13,
+           .suffix-14,
+           .suffix-15,
+           .suffix-16 { 
+               padding: 0; 
+           }
+           
+           /* Push & Pull */
+           .push-1,
+           .push-2,
+           .push-3,
+           .push-4,
+           .push-5,
+           .push-6,
+           .push-7,
+           .push-8,
+           .push-9,
+           .push-10,
+           .push-11,
+           .push-12,
+           .push-13,
+           .push-14,
+           .push-15,
+           .push-16,
+           .push-1,
+           .pull-2,
+           .pull-3,
+           .pull-4,
+           .pull-5,
+           .pull-6,
+           .pull-7,
+           .pull-8,
+           .pull-9,
+           .pull-10,
+           .pull-11,
+           .pull-12,
+           .pull-13,
+           .pull-14,
+           .pull-15,
+           .pull-16 { 
+               left: 0; 
+           }
+       }
+   }   

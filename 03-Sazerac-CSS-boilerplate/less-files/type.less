@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Type
+   ========================================================================== */
+/**
+ *  Table of contents in this document
+ *
+ *  #Base
+ *  #Links
+ *  #Typography
+ *  #Emphasis
+ *  #Addresses & abbreviation
+ *  #Blockquotes
+ *  #List
+ *  #Code
+ *  #Misc
+ */
+ 
+/* #Base
+   ================================================== */
+
+   body {
+       font-family:            @textFontFamily;
+       font-size:              @textFontSize;
+       line-height:            @textLineHeight;
+       color:                  @textColor;
+       background-color:       @bodyBackground;
+       /* Addresses margins handled incorrectly in IE6/7 */
+       margin: 0;
+   }
+
+
+/* #Links
+   ================================================== */
+
+   /* Link definition */
+   a {
+       color:                  @linkColor;
+       text-decoration:        @linkDecoration;
+   }
+   a:hover {
+       color:                  @linkColorHover;
+       text-decoration:        @linkDecorationHover;
+   }
+
+
+/* #Typography
+   ================================================== */
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+       margin: 0;
+       font-family:            @headingsFontFamily;
+       font-weight:            @headingsFontWeight;
+       color:                  @headingsColor;
+   
+       text-rendering: optimizelegibility;
+   }
+   h1 small,
+   h2 small,
+   h3 small,
+   h4 small,
+   h5 small,
+   h6 small {
+       font-weight:            @smallHeadingsFontWeight;
+       color:                  @smallHeadingsColor;
+   }
+   /* Addresses font sizes and margins set differently in IE6/7 */
+   /* Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5 */
+   h1 {
+       font-size:               @headingOneFontSize;
+       line-height:             @headingOneLineHeight;
+       margin-bottom:            14px;
+   }
+   h1 small {
+       font-size:               @smallHeadingsFontSize;
+       line-height:             @headingOneLineHeight;
+       font-family:             @textFontFamily; 
+       color:                   @gray;
+   }
+   h2 {
+       font-size:               @headingTwoFontSize;
+       line-height:             @headingTwoLineHeight;
+       margin-bottom:           10px;
+   }
+   h2 small {
+       font-size:               @smallHeadingsFontSize;
+       font-family:             @textFontFamily; 
+       color:                   @gray;
+   }
+   h3 {
+       font-size:                @headingTreeFontSize;
+       line-height:              @headingTreeLineHeight;
+       margin-bottom:            8px;
+   }
+   h4 {
+       font-size:                @headingFourFontSize;
+       line-height:              @headingFourLineHeight;
+       margin-bottom:            4px;
+   }
+   h5 {
+       font-size:                @headingFiveFontSize;
+       line-height:              @headingFiveLineHeight;
+   }
+   h6 {
+       font-size:                @headingSixFontSize;
+       line-height:              @headingSixLineHeight;
+       text-transform: uppercase;
+   }
+   p {
+       margin: 0 0 @textLineHeight / 2;
+   
+       small {
+           font-size:           @smallTextFontSize;
+           color:               @smallTextColor;
+           font-weight:         @smallTextFontWeight;
+       }
+   }
+   .subheader { 
+       line-height:             @textLineHeight;
+       font-family:             @textFontFamily;
+       font-size:               @textFontSize * 1.5;
+       color:                   @gray; 
+       font-weight:             300; 
+       margin-bottom:           @textLineHeight / 2;
+   }
+   
+
+/* #Emphasis
+   ================================================== */
+   
+   strong {
+       font-weight: bold;
+   }
+   em {
+       font-style: italic;
+   }
+
+
+/* #Addresses & abbreviation
+   ================================================== */
+   address {
+       display: block;
+       margin-bottom: @textLineHeight;
+       font-style: normal;
+       line-height: @textLineHeight;
+   }
+   abbr[title] {
+       cursor: help;
+       border-bottom: 1px dotted @gray;
+   }
+   abbr.capital {
+       font-size: 90%;
+       text-transform: uppercase;
+   }
+
+/* #Blockquotes
+   ================================================== */
+   blockquote {
+       padding: 5px 0 5px 20px;
+       margin: 0 0 @textLineHeight;
+       border-left: 3px solid @grayLight;
+       p {
+           margin-bottom: 0;
+           font-size: @textFontSize + 5%;
+           font-weight: 300;
+           line-height: @textLineHeight * 1.25;
+       }
+       cite {
+           display: block;
+           line-height: @textLineHeight;
+           color: @grayLight;
+           &:before {
+               content: '\2014 \00A0';
+           }
+       }
+       &.pull-right {
+           float: right;
+           padding-right: 20px;
+           padding-left: 0;
+           border-right: 3px solid @grayLight;
+           border-left: 0;
+           p,
+           cite {
+               text-align: right;
+           }
+       }
+   }
+
+/* #List
+   ================================================== */
+   
+   /* Unordered and Ordered lists */
+
+   ul, 
+   ol {
+       padding: 0;
+       margin: 0 0 @textLineHeight / 2 @textLineHeight;
+   }
+   ul ul,
+   ul ol,
+   ol ol,
+   ol ul {
+       margin-bottom: 0;
+   }
+   ul.unstyled,
+   ol.unstyled {
+       margin-left: 0;
+       list-style: none;
+       
+       ul,
+       ol{
+           list-style:none;
+       }
+   }
+   ul.disc{
+       list-style: disc  !important;
+
+       ul {
+           list-style: disc;
+       }
+   }
+   ul.circle{
+       list-style: circle !important;
+
+       ul {
+           list-style: circle;
+       }
+   }
+   ul.square{
+       list-style: square  !important;
+
+       ul {
+            list-style: square;
+        }
+   }
+   ol.decimal {
+       list-style: decimal !important;
+
+       ol{
+           list-style: decimal;
+       }
+   }
+   ol.latin {
+       list-style: upper-latin !important;
+
+       ol{
+           list-style: upper-latin;
+       }
+   }
+   ol.roman {
+       list-style: upper-roman !important;
+
+       ol{
+           list-style: upper-roman;
+       }
+   }
+   li {
+       line-height: @textLineHeight;
+   }
+
+   /* Description Lists */
+   dl {
+       margin-bottom: @textLineHeight;
+   }
+   dt,
+   dd {
+       line-height: @textLineHeight;
+   }
+   dt {
+       font-weight: bold;
+       line-height: @textLineHeight - 1; /* fix jank Helvetica Neue font bug */
+   }
+   dd {
+       margin-left: @textLineHeight / 2;
+   }
+   /* Horizontal layout (like forms) */
+   .dl-horizontal {
+       dt {
+           float: left;
+           width: 120px;
+           clear: left;
+           text-align: right;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           white-space: nowrap;
+       }
+       dd {
+           margin-left: 130px;
+       }
+   }
+
+/* #Code
+ ========================================================================== */
+    code,
+    pre {
+        padding: 0 3px 2px;
+        font-family: @codeFontFamily;
+        font-size: @textFontSize - 1;
+        color: @grayDark;
+
+        .border;
+
+    }
+    code {
+        padding: 2px 4px;
+        color: @red;
+        background-color: @grayLighter;
+        border: 1px solid @grayLight;
+    }
+    pre {
+        display: block;
+        padding: 8.5px;
+        margin: 0 0 9px;
+        font-size: @textFontSize - .75;
+        line-height: @textLineHeight;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: pre;
+        white-space: pre-wrap;
+        background-color: @grayLighter;
+        border: 1px solid @grayLight;
+        color: @gray;
+
+        .border;
+
+        code {
+            padding: 0;
+            color: inherit;
+            background-color: transparent;
+            border: 0;
+        }
+    }
+
+/* #Misc
+   ================================================== */
+   hr {
+       margin: @textLineHeight 0;
+       border: 0;
+       border-top: 1px solid @gray;
+       border-bottom: 1px solid @white;
+   }
+   q:before,
+   q:after,
+   blockquote:before,
+   blockquote:after {
+       content: "";
+   }
+   cite {
+     font-style: normal;
+   }
